@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUDSample.AddEmployeePage" Title="Add Employee">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <Label Text="Name" FontAttributes="Bold" TextColor="Black"/>
+            <Entry Placeholder="Name" FontSize="Small" HorizontalOptions="FillAndExpand" x:Name="name"/>
+            <Label Text="Address" FontAttributes="Bold" TextColor="Black"/>
+            <Entry Placeholder="Address" FontSize="Small" HorizontalOptions="FillAndExpand" x:Name="address"/>
+            <Label Text="Phone Number" FontAttributes="Bold" TextColor="Black"/>
+            <Entry Placeholder="Phone Number" FontSize="Small" HorizontalOptions="FillAndExpand" x:Name="phoneNumber" 
+                   Keyboard="Numeric"/>
+            <Label Text="Email" FontAttributes="Bold" TextColor="Black"/>
+            <Entry Placeholder="Email" FontSize="Small" HorizontalOptions="FillAndExpand" Keyboard="Email" x:Name="email"/>
+            <Label Text="Password" FontAttributes="Bold" TextColor="Black"/>
+            <Entry Placeholder="Name" FontSize="Small" 
+                   HorizontalOptions="FillAndExpand" IsPassword="True" x:Name="password"/>
+
+            <Button Text="Save" Clicked="SaveEmployee" HorizontalOptions="FillAndExpand" 
+                    BackgroundColor="Maroon" TextColor="White" x:Name="saveBtn"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

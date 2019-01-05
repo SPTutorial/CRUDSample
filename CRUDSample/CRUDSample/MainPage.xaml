@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CRUDSample"
+             x:Class="CRUDSample.MainPage" Title="Employee List">
+
+    <StackLayout Padding="5">
+        <Button Text="Add Employee" HorizontalOptions="FillAndExpand" 
+                BackgroundColor="Orange" TextColor="Black" Clicked="AddEmployee"/>
+        
+        <ListView x:Name="EmployeeList" HasUnevenRows="True" ItemTapped="EditEmployee">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Delete" Clicked="DeleteEmployee" IsDestructive="true" CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <StackLayout Spacing="2">
+                            <Label Text="{Binding Name,StringFormat='Name:{0:F0}'}" FontSize="Small" FontAttributes="Bold"/>
+                            <Label Text="{Binding Address,StringFormat='Address:{0:F0}'}" FontSize="Small" FontAttributes="None"/>
+                            <Label Text="{Binding PhoneNumber,StringFormat='Phone No :{0:F0}'}" FontSize="Small" FontAttributes="None"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
